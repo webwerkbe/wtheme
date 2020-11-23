@@ -1,0 +1,81 @@
+html {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $dark-grey;
+  font-size: $base-font-size;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  font-weight: $heading-font-weight;
+  color: $primary-color;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+} 
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+// Other
+p,
+pre {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 50%;
+  line-height: 0;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 50%;
+  line-height: 0;
+}

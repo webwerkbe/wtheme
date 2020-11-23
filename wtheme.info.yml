@@ -1,0 +1,21 @@
+name: wTheme
+type: theme
+base theme: classy
+description: A Webwerk theme
+package: Custom
+libraries:
+  - wtheme/global-styling
+  - wtheme/global-scripts
+
+regions:
+  meta: Meta
+  branding: Branding
+  navigation: Navigation
+  help: Help
+  highlighted: Highlighted
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+
+core: '8.x'
+core_version_requirement: ^8 || ^9

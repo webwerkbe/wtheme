@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border: none;
+}
+
+th {
+  padding: 10px;
+  background-color: white;
+  font-family: $heading-font-family;
+  font-size: 16px;
+  border-bottom: 3px solid $light-grey;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 3px $light-grey;
+  background-color: white;
+}
+
+td {
+  font-size: 16px;
+  padding: 10px;
+  border-left: none;
+  border-top: none;
+  border-bottom: 3px solid $light-grey;
+}
+
+table caption {
+  color: $primary-color;
+  font-family: $heading-font-family;
+}

@@ -1,0 +1,132 @@
+// Preferred version of clearfix
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+// Centers a block level element, requires width
+@mixin center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Vertical align, all browsers http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Breakpoints
+@mixin breakpoint($point) {
+	@if $point == xs { @media (min-width: 321px) { @content; } }
+	@if $point == sm { @media (min-width: 576px) { @content; } }
+	@if $point == md { @media (min-width: 768px) { @content; } }
+ 	@if $point == lg { @media (min-width: 992px) { @content; } }
+  @if $point == xl { @media (min-width: 1200px)  { @content; } }
+  @if $point == custom { @media (min-width: 892px)  { @content; } } // Custom breakpoint for mobile menu
+}
+
+@mixin breakpoint-down($point) {
+	@if $point == xs { @media (max-width: 320.98px) { @content ; }	} 
+	@if $point == sm { @media (max-width: 575.98px) { @content ; } } 
+	@if $point == md { @media (max-width: 767.98px) { @content ; } }
+	@if $point == lg { @media (max-width: 991.98px) { @content ; } }
+  @if $point == xl { @media (max-width: 1199.98px) { @content ; }	}
+  @if $point == custom { @media (max-width: 891.98px) { @content ; }	} // Custom breakpoint for mobile menu
+}
+
+@mixin word-break() {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+		 -moz-hyphens: auto;
+			-ms-hyphens: auto;
+					hyphens: auto;
+}
+
+@mixin pseudo($pos: absolute, $content: '') {
+  position: $pos;
+  content: $content;
+}
+
+// https://stackoverflow.com/a/36506017/5239223
+@mixin background-fullwidth($background: #f7f7f7) {
+	&:after {
+    @include pseudo;
+		left: 50%;
+		top: 0;
+		height: 100%;
+		width: 100vw;
+		transform: translateX(-50%);
+		z-index: -2;
+		background: $background;
+	}
+}
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin link-as-button() {
+	display: inline-block;
+  text-decoration: none;
+  padding: 15px 30px;
+	color: white;
+	background-color: $primary-color;
+	border: 1px solid $primary-color;
+	font-family: $heading-font-family;
+	font-weight: 600;
+	&:hover {
+		background-color: darken($primary-color,5%);
+	}
+}
+
+@mixin transform() {
+	transition: transform .2s ease-out;
+	&:hover {
+		transition: transform .2s ease-out;
+		transform: translateX(10px);
+	}
+}
+
+@mixin date() {
+	display: inline-block;
+	padding: 5px 10px;
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+}
+
+@mixin container() {
+	margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  max-width: 1180px;
+}
+
+@mixin padding() {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+@mixin teaser-transform(){
+	transition: all .7s cubic-bezier(.2,1,.22,1);
+	transform: scale(1);
+}
+@mixin teaser-transform-hover(){ 
+	transform: scale(1.07);
+}

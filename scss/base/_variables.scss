@@ -1,0 +1,39 @@
+// Colors
+
+$light-grey: #f7f7f7;
+$medium-grey: #6e6e6e;
+$dark-grey: #2a2a2a;
+
+$primary-color: #014e9f;
+$secondary-color: #3e938b;
+$tertiary-color: #f39631;
+
+$status-color: #8dbe51;
+$warning-color: #ddc44f;
+$error-color: #cd4533;
+
+// Debugging
+
+$debug: 1px dotted blue;
+
+// Font Stacks/Sizes
+
+$base-font-size: 16px;
+$base-line-height: 1.75;
+
+$heading-line-height: 1.2;
+$heading-font-weight: 700;
+
+// Letter spacing
+
+$base-letter-spacing: 0;
+
+$base-font-family: serif;
+$heading-font-family: sans-serif;
+
+// Other Sizes
+
+$base-border-radius: 2px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;

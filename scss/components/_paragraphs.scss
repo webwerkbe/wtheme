@@ -1,0 +1,24 @@
+// Margins
+
+.field-name-field-paragraphs > .paragraph {
+  margin-bottom: 50px;
+}
+.field-name-field-paragraphs > .paragraph:first-of-type {
+  margin-top: 50px;
+}
+
+// Link color
+
+.field-name-field-paragraphs > .paragraph {
+  a {
+    color: $primary-color;
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// Text
+//////////////////////////////////////////////////////////////////////
+

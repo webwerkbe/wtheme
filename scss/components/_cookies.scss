@@ -1,0 +1,202 @@
+//////////////////////////////////////////////////////////////////////
+// General
+//////////////////////////////////////////////////////////////////////
+
+.sliding-popup-bottom {
+  z-index: 1000;
+  background-color: $light-grey;
+  padding: 15px;
+  border-top: 1px solid darken($light-grey, 10%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+
+@include breakpoint(md) {
+  .sliding-popup-bottom {
+    width: 630px !important;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    left: 25px;
+    right: inherit;
+    border: 1px solid darken($light-grey, 10%) !important;
+    border-radius: $base-border-radius;
+  }
+}
+
+// Resets
+.sliding-popup-bottom .eu-cookie-compliance-content,
+.sliding-popup-bottom .eu-cookie-compliance-message,
+.sliding-popup-bottom .eu-cookie-compliance-categories,
+.sliding-popup-bottom .eu-cookie-compliance-buttons {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  float: none;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Message
+//////////////////////////////////////////////////////////////////////
+
+// More info styling
+.sliding-popup-bottom .eu-cookie-compliance-message {
+  margin-bottom: 1em;
+  a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  span.eu-cookie-compliance-more-button {
+    text-decoration: underline;
+    display: inline;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// Categories
+//////////////////////////////////////////////////////////////////////
+
+// Toggle instead of checkbox, see https://www.w3schools.com/howto/howto_css_switch.asp
+
+// The switch - the box around the slider
+.eu-cookie-compliance-categories .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+// Hide default HTML checkbox
+.eu-cookie-compliance-categories .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+// The slider
+.eu-cookie-compliance-categories .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.eu-cookie-compliance-categories .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.eu-cookie-compliance-categories input:checked + .slider {
+  background-color: $primary-color;
+}
+
+.eu-cookie-compliance-categories input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.eu-cookie-compliance-banner input:disabled + .slider {
+  opacity: 0.5;
+}
+
+// Rounded sliders
+.eu-cookie-compliance-categories .slider.round {
+  border-radius: 34px;
+}
+
+.eu-cookie-compliance-categories .slider.round:before {
+  border-radius: 50%;
+}
+
+.eu-cookie-compliance-categories .eu-cookie-compliance-category {
+  margin-bottom: 1em;
+}
+
+// Description
+
+.eu-cookie-compliance-categories .eu-cookie-compliance-category-description {
+  font-size: 0.75rem;
+  margin-top: 5px;
+  line-height: 1.3;
+}
+
+.eu-cookie-compliance-categories .eu-cookie-compliance-category .category-label {
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+@include breakpoint(md) {
+  .eu-cookie-compliance-categories .eu-cookie-compliance-category-description {
+    margin-left: 50px;
+    margin-top: -5px;
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////
+// Buttons
+//////////////////////////////////////////////////////////////////////
+
+.eu-cookie-compliance-buttons {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 16px;
+}
+
+// Default button
+.sliding-popup-bottom button.eu-cookie-compliance-default-button {
+  margin-right: 0.5em;
+  padding-right: 40px;
+}
+
+// Checkbox
+.sliding-popup-bottom button.eu-cookie-compliance-default-button {
+  margin-top: 10px;
+  position: relative;
+  svg {
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Muted buttons
+.sliding-popup-bottom button.eu-cookie-withdraw-button,
+.sliding-popup-bottom button.eu-cookie-compliance-save-preferences-button {
+  margin-top: 10px;
+  background: darken($light-grey, 10%);
+  border: 1px solid darken($light-grey, 20%);
+  color: $dark-grey;
+  font-weight: 400;
+  &:active, 
+  &:hover {
+    color: $dark-grey;
+    background: darken($light-grey, 20%);
+    border: 1px solid darken($light-grey, 20%);
+  }
+}
+
+.sliding-popup-bottom button.eu-cookie-withdraw-button {
+  display: none;
+}
+
+.sliding-popup-bottom.eu-cookie-withdraw-wrapper button.eu-cookie-withdraw-button {
+  display: block;
+}

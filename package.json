@@ -1,0 +1,14 @@
+{
+  "name": "wtheme",
+  "version": "1.0.0",
+  "description": "A Webwerk theme",
+  "main": "gulpfile.js",
+  "author": "Webwerk",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "browser-sync": "^2.26.0"
+  }
+}

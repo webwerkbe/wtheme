@@ -1,0 +1,124 @@
+// Algemene styling voor menu's en menu resets
+
+.l-header ul.menu {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    display: inline-block;
+  }
+}
+
+.l-header .l-header__mobile ul.menu {
+  display: block;
+  li {
+    display: block;
+  }
+}
+
+// Containers in flexbox
+
+.l-header__top {
+  .l-container {
+    .c-meta {
+      display: flex;
+    }
+  }
+}
+
+.l-header__bottom {
+  .l-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// Default colors and font-styles
+
+.c-navigation {
+  ul.menu {
+    li a { 
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $primary-color;
+      font-size: 16px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// Header top
+//////////////////////////////////////////////////////////////////////
+
+// Colors and typography
+
+.l-header__top {
+  font-family: $base-font-family;
+  background: $light-grey;
+  a {
+    color: $secondary-color;
+  }
+}
+
+// Placement
+
+.l-header__top {
+  padding: 7px 0;
+  .l-container {
+    .c-meta {
+      justify-content: flex-end;
+      .block-lang-dropdown {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// Header bottom
+//////////////////////////////////////////////////////////////////////
+
+// Branding
+
+.c-branding {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  a.site-logo {
+    display: block; 
+    img {
+      width: 314px;
+      height: auto;
+    }
+  }
+}
+
+.l-header__bottom {
+  .c-navigation {
+    display: flex;
+    align-items: center;
+    .menu--main {
+      ul li a {
+        margin-left: 20px;
+      }
+    }
+    .block-book-now-block {
+      margin-left: 20px;
+      a {
+        @include link-as-button;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+// Active state
+
+.l-header__bottom {
+  .c-navigation {
+    ul.menu li {
+      a:hover,
+      a.is-active {
+        color: $secondary-color;
+      }
+    }
+  }
+}

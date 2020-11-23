@@ -1,0 +1,156 @@
+//////////////////////////////////////////////////////////////////////
+// Mobile menu behavior
+//////////////////////////////////////////////////////////////////////
+
+// Hide desktop menu on mobile
+
+@include breakpoint-down(custom) {
+  .l-header .l-header__top .c-meta .block-social-links-block,
+  .l-header .l-header__bottom .c-navigation {
+    display: none;
+  }
+}
+
+// Hide toggles on desktop
+
+@include breakpoint(custom) {
+  .c-toggle {
+    display: none;
+  }
+}
+
+// Visibility 
+
+.l-header__mobile {
+  display: none;
+}
+
+.mobile-menu-is-visible {
+  .l-header__mobile {
+    display: block;
+  }
+}
+
+.l-header__mobile{
+  background: white;
+}
+
+//////////////////////////////////////////////////////////////////////
+// Toggle
+//////////////////////////////////////////////////////////////////////
+
+// Navigation toggle
+
+@include breakpoint-down(custom) {
+  .l-header__bottom {
+    .l-container {
+      position: relative;
+      .c-toggle {
+        position: absolute;
+        top: calc(50% - 12px);
+        right: 0;
+        width: 36px;
+        height: 24px;
+        .navigation-toggle {
+          display: block;
+          padding: 12px 0; // Expand click area! 
+          width: 36px;
+          .navigation-toggle__bars {
+            position: absolute;
+            width: 36px;
+            height: 2px;
+            background: $primary-color;
+            transition: background-color .3s ease;
+            border-radius: $base-border-radius;
+            &:before,
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              transition: all .3s;
+              width: 100%;
+              height: 100%;
+              background: $primary-color;
+              transform-origin: 50% 50%;
+              border-radius: $base-border-radius;
+            }
+            &:before {
+              top: -10px;
+              left: 0;
+            }
+            &:after {
+              bottom: -10px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Change hamburger icon after button click 
+
+@include breakpoint-down(custom) {
+  .mobile-menu-is-visible {
+    .navigation-toggle {
+      .navigation-toggle__bars {
+        visibility: hidden;
+        &:before,
+        &:after {
+          visibility: visible;
+        }
+        &:before {
+          position: absolute;
+          top: 0 !important;
+          transform: rotate(45deg);
+        }
+        &:after {
+          bottom: 0 !important;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+// Navigation theming
+//////////////////////////////////////////////////////////////////////
+
+.l-header__mobile {
+  padding: 20px;
+}
+
+// Mobile menu styling
+
+.l-header__mobile {
+  border-bottom: 5px solid $secondary-color;
+  .c-navigation {
+    margin-bottom: 20px;
+    ul.menu li {
+      display: block;
+      a {
+        text-align: center;
+        display: block;
+        padding: 10px 20px;
+      }
+    }
+    .block-book-now-block {
+      text-align: center;
+      a {
+        text-transform: uppercase;
+        margin-top: 15px;
+        @include link-as-button;
+        padding: 10px 20px;
+      }
+    }
+  }
+  .c-meta {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
