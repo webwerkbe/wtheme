@@ -10,22 +10,9 @@
  */
 function wtheme_preprocess_html(&$variables) {
 
-  // Add x-ua-compatibility tags.
-  $x_ua_compatible = [
-    '#tag' => 'meta',
-    '#attributes' => [
-      'http-equiv' => 'x-ua-compatible',
-      'content' => 'ie=11',
-    ],
-  ];
-  $variables['page']['#attached']['html_head'][] = [$x_ua_compatible, 'x-ua-compatible'];
-
   // Add node id as a class.
   $request = \Drupal::request();
-  $node = ($request->attributes->get('_route') == 'entity.node.canonical'
-            ? $request->attributes->get('node')
-            : NULL
-          );
+  $node = ($request->attributes->get('_route') == 'entity.node.canonical' ? $request->attributes->get('node') : NULL );
 
   if ($node) {
     $variables['attributes']['class'][] = 'page-node-' . $node->id();
