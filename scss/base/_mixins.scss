@@ -130,3 +130,12 @@
 @mixin teaser-transform-hover(){ 
 	transform: scale(1.07);
 }
+
+@mixin link-style($color: inherit) {
+	color: $color;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+		text-underline-offset: 1px;
+	}
+}
