@@ -21,6 +21,15 @@ svg {
   height: auto;
 }
 
+
+// Reset margin top on titles
+
+h1.page-title,
+h2.block-title {
+  margin-top: 0;
+}
+
+
 // Reset menus
 
 ul.menu,
