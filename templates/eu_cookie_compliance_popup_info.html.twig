@@ -56,7 +56,10 @@
         {% for key, category in cookie_categories %}
           <div class="eu-cookie-compliance-category">
             <label class="switch">
-              <input type="checkbox" name="cookie-categories" id="cookie-category-{{ key }}" value="{{ key }}" {% if fix_first_cookie_category and loop.first %} checked disabled{% endif %}>
+              <input type="checkbox" name="cookie-categories" id="cookie-category-{{ key }}"
+                value="{{ key }}"
+                {% if category.checkbox_default_state in ['checked', 'required'] %} checked {% endif %}
+                {% if category.checkbox_default_state == 'required' %} disabled {% endif %} >
               <span class="slider round">
             </label>
             <span class="category-label" for="cookie-category-{{ key }}">{{ category.label }}</label>
