@@ -11,6 +11,11 @@ html {
   min-height: 100%;
 }
 
+html, 
+body {
+  overflow-x: hidden;
+}
+
 img,
 picture,
 object,
@@ -21,14 +26,12 @@ svg {
   height: auto;
 }
 
-
 // Reset margin top on titles
 
 h1.page-title,
 h2.block-title {
   margin-top: 0;
 }
-
 
 // Reset menus
 
@@ -118,7 +121,7 @@ a.field-group-link {
     a {
       color: $primary-color;
       &:hover {
-        color: dar
+        color: darken($primary-color, 5%);
       }
     }
     .is-active a {
