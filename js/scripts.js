@@ -10,7 +10,7 @@
     attach: function (context, settings) {
 
       // Mobile menu toggle
-      $('.navigation-toggle__icon').on('click', function(){
+      $('.navigation-toggle').on('click', function(){
         $('body').toggleClass('mobile-menu-is-visible');
       });
       $(window).on('resize orientationchange', function(){
