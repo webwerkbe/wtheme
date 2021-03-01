@@ -59,6 +59,7 @@
 
 // https://stackoverflow.com/a/36506017/5239223
 @mixin background-fullwidth($background: #f7f7f7) {
+	position: relative;
 	&:after {
     @include pseudo;
 		left: 50%;
