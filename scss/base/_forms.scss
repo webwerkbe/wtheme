@@ -31,6 +31,17 @@ select {
   background-repeat: no-repeat;
 }
 
+fieldset {
+  border: 1px solid $primary-color !important;
+  padding: 10px !important;
+}
+
+fieldset .fieldset-legend { color: $primary-color; }
+
+fieldset .fieldset-wrapper .form-item:first-child {
+  margin-top: 0;
+}
+
 legend {
   font-family: $heading-font-family;
   color: $dark-grey;
