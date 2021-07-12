@@ -110,7 +110,9 @@ ul.links {
 // Remove underline from field group links
 
 a.field-group-link {
-  text-decoration: none; 
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 // Pager
@@ -138,4 +140,5 @@ a.field-group-link {
 
 .l-main .messages {
   margin-top: 20px;
+  padding: 10px 20px 10px 35px;
 }
